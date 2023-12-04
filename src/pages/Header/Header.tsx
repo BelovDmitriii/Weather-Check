@@ -1,8 +1,14 @@
-import React from 'react';
 import styles from './Header.module.scss';
 import IconsSvgSelector from '../../assets/images/icons/IconsSvgSelector';
+import Select from 'react-select';
 
 function Header() {
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ]
+
   return (
     <header className={styles.header}>
       <div className={styles.wrapper}>
@@ -13,7 +19,12 @@ function Header() {
           Weather Check
         </div>
       </div>
-      <div className={styles.wrapper}></div>
+      <div className={styles.wrapper}>
+        <div className={styles.themes}>
+          <IconsSvgSelector id='themes' />
+          <Select options={options} />
+        </div>
+      </div>
     </header>
   )
 }
