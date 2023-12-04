@@ -7,7 +7,19 @@ function Header() {
     { value: 'chocolate', label: 'Chocolate' },
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' }
-  ]
+  ];
+
+  const colorStyles = {
+    control: (styles: any) => ({ 
+      ...styles,
+      backgroundColor: 'rgba(71, 147, 255, 0.2)',
+      width: '194px',
+      height: '37px',
+      border: 'none',
+      borderRadius: '10px',
+      zIndex: '100',
+     }),
+  }
 
   return (
     <header className={styles.header}>
@@ -23,7 +35,7 @@ function Header() {
         <div className={styles.themes}>
           <IconsSvgSelector id='themes' />
         </div>
-        <Select options={options} />
+        <Select styles={colorStyles} options={options} />
       </div>
     </header>
   )
