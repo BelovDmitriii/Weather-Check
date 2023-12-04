@@ -22,8 +22,8 @@ function Header() {
       <div className={styles.wrapper}>
         <div className={styles.themes}>
           <IconsSvgSelector id='themes' />
-          <Select options={options} />
         </div>
+        <Select options={options} />
       </div>
     </header>
   )
