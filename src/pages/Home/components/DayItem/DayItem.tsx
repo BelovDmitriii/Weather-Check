@@ -1,6 +1,5 @@
-import React from 'react';
 import styles from './DayItem.module.scss';
-import IconsSvgSelector from '../../assets/images/icons/IconsSvgSelector';
+import IconsSvgSelector from '../../../../assets/images/icons/IconsSvgSelector';
 
 type Props = {}
 

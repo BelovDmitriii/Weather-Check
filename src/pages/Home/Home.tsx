@@ -1,13 +1,17 @@
 import React from 'react';
 import styles from './Home.module.scss';
-import DayItem from '../DayItem/DayItem';
+import DayItem from './components/DayItem/DayItem';
+import DayItemInfo from './components/DayItemInfo/DayItemInfo';
 
 type Props = {}
 
 const Home = (props: Props) => {
   return (
     <div className={styles.home}>
-      <DayItem />
+      <div className={styles.wrapper}>
+        <DayItem />
+        <DayItemInfo />
+      </div>
     </div>
   )
 }
