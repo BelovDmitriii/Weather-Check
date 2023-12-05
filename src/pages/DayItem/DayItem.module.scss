@@ -1,0 +1,45 @@
+@import '../../styles/variables.scss';
+
+.day_info {
+  padding: 30px;
+  max-width: 400px;
+  width: 100%;
+  background: $white-background;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+}
+
+.top_block {
+  svg {
+    width: 100px;
+    height: 100px;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.current_temperature {
+  font-size: 96px;
+  font-weight: 500;
+  color: $text-color;
+}
+
+.current_day {
+  font-size: 40px;
+  color: $white-theme-color;
+}
+
+.bottom_block {
+  .current_time,
+  .current_city {
+    color: $base-color;
+  }
+  font-size: 25px;
+}
+
+.current_city {
+  margin-top: 10px;
+}

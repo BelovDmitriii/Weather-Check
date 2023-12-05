@@ -4,9 +4,9 @@ import Select from 'react-select';
 
 function Header() {
   const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
+    { value: 'city-1', label: 'Москва' },
+    { value: 'city-2', label: 'Санкт-Петербург' },
+    { value: 'city-3', label: 'Екатеринбург' }
   ];
 
   const colorStyles = {
@@ -35,7 +35,7 @@ function Header() {
         <div className={styles.themes}>
           <IconsSvgSelector id='themes' />
         </div>
-        <Select styles={colorStyles} options={options} />
+        <Select defaultValue={options[0]} styles={colorStyles} options={options} />
       </div>
     </header>
   )
