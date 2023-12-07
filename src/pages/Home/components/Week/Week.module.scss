@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   width: 100%;
   background: $white-background;
-  margin-top: 50px;
+  margin-top: 15px;
   box-shadow: $box-shadow;
   border-radius: 0 0 $border-radius $border-radius;
   padding: 40px;
@@ -56,6 +56,42 @@
   }
 
   &:hover {
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 25px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
+}
+
+.filter_container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 9px;
+}
+
+.filter_wrapper {
+  display: flex;
+}
+
+.cancel_button, .tab {
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 3px 12px;
+  border-radius: 5px;
+  padding: 9px 20px;
+  background-color: $white-background;
+  margin-right: 15px;
+  color: $white-theme-color;
+  font-size: 18px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tab{
+  &.active {
+    background: $active-color;
+    color: #fff;
+  }
+}
+
+.cancel_button {
+  margin-right: 0;
 }

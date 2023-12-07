@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './Home.module.scss';
 import DayItem from './components/DayItem/DayItem';
 import DayItemInfo from './components/DayItemInfo/DayItemInfo';

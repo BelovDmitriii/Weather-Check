@@ -1,4 +1,5 @@
 import Card from './Card';
+import Filter from './Filter';
 import styles from './Week.module.scss';
 
 type Props = {}
@@ -72,11 +73,14 @@ const Week = (props: Props) => {
   ]
 
   return (
-    <div className={styles.week}>
-      {week.map((item: Day) => {
-        return <Card key={item.current_day} day={item}/>
-      })}
+    <>
+      <Filter />
+      <div className={styles.week}>
+        {week.map((item: Day) => {
+          return <Card key={item.current_day} day={item}/>
+        })}
     </div>
+    </>
   )
 }
 
