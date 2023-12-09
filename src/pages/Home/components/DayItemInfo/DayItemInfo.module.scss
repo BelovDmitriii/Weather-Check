@@ -5,7 +5,7 @@
   padding: 40px;
   max-width: 740px;
   width: 100%;
-  background-color: $white-background;
+  background: var(#{--components-background-default});
   box-shadow: $box-shadow;
   border-radius: $border-radius;
 }
@@ -42,9 +42,10 @@
     color: $base-color;
   }
   .indicator_value {
-    font-size: 20px;
-    color: $white-theme-color;
+    font-size: 18px;
+    color: var(#{--text-color-default});
     font-weight: 500;
+    z-index: 1;
   }
 }
 
@@ -52,6 +53,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  z-index: -1;
-  width: 100%;
+  width: 70%;
+  opacity: 0.8;
 }

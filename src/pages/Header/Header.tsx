@@ -10,14 +10,18 @@ function Header() {
   ];
 
   const colorStyles = {
-    control: (styles: any) => ({ 
+    control: (styles: any) => ({
       ...styles,
-      backgroundColor: 'rgba(71, 147, 255, 0.2)',
-      width: '194px',
+      backgroundColor: 1 ? 'rgba(71, 147, 255, 0.2)' : 'rgb(79, 79, 79)',
+      width: '210px',
       height: '37px',
       border: 'none',
       borderRadius: '10px',
       zIndex: '100',
+     }),
+    singleValue: (styles: any) => ({
+      ...styles,
+      color: 1 ? '#000' : '#fff',
      }),
   }
 

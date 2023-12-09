@@ -65,7 +65,7 @@ const Week = (props: Props) => {
     {
       current_day: 'Сегодня',
       day_info: '13 декабря',
-      icon_id: 'sun-snow',
+      icon_id: 'sun-rain',
       temp_day: '-13',
       temp_night: '-15',
       info: 'Облачно',

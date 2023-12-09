@@ -15,7 +15,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  background: $card-background;
+  background: var(#{--card-background-default});
   border-radius: 10px;
   padding: 15px 30px;
   transition: 0.3s;
@@ -24,6 +24,7 @@
   .day {
     margin-bottom: 5px;
     font-size: 18px;
+    color: var(#{--text-color-default});
   }
 
   .day_info {
@@ -43,6 +44,7 @@
   .day_temp {
     font-size: 20px;
     margin-bottom: 5px;
+    color: var(#{--text-color-default});
   }
 
   .night_temp {
@@ -57,7 +59,7 @@
   }
 
   &:hover {
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 25px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    box-shadow: var(#{--card-shadow-default});
   }
 }
 
@@ -76,9 +78,9 @@
   box-shadow: rgba(0, 0, 0, 0.18) 0px 3px 12px;
   border-radius: 5px;
   padding: 9px 20px;
-  background-color: $white-background;
+  background-color: var(#{--components-background-default});
   margin-right: 15px;
-  color: $white-theme-color;
+  color: var(#{--text-color-default});
   font-size: 18px;
   display: flex;
   align-items:center;
