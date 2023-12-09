@@ -2,12 +2,12 @@ import {Route, Routes} from 'react-router-dom';
 import Home from './pages/Home/Home';
 import MonthStat from './pages/MonthStat/MonthStat';
 import Header from './pages/Header/Header';
-import Popup from './pages/Popup/Popup';
+// import Popup from './pages/Popup/Popup';
 
 function App() {
   return (
     <div className="global_container">
-      <Popup />
+      {/* <Popup /> */}
       <div className="container">
       <Header />
       <Routes>

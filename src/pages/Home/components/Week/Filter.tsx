@@ -22,7 +22,7 @@ const Filter = (props: Props) => {
       <div className={styles.filter_wrapper}>
         {filter_components.map((tab) => {
           return (
-            <div className={styles.tab} key={tab.value}>
+            <div className={styles.tab + ' ' + styles.active} key={tab.value}>
               {tab.value}
             </div>
           )
