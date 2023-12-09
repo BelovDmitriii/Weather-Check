@@ -1,6 +1,7 @@
 import styles from './Header.module.scss';
 import IconsSvgSelector from '../../assets/images/icons/IconsSvgSelector';
 import Select from 'react-select';
+import { useEffect, useState } from 'react';
 
 function Header() {
   const options = [
@@ -9,10 +10,12 @@ function Header() {
     { value: 'city-3', label: 'Екатеринбург' }
   ];
 
+  const [theme, setTheme] = useState('light')
+
   const colorStyles = {
     control: (styles: any) => ({
       ...styles,
-      backgroundColor: 1 ? 'rgba(71, 147, 255, 0.2)' : 'rgb(79, 79, 79)',
+      backgroundColor: theme === 'light' ? 'rgba(71, 147, 255, 0.2)' : 'rgb(79, 79, 79)',
       width: '210px',
       height: '37px',
       border: 'none',
@@ -21,9 +24,28 @@ function Header() {
      }),
     singleValue: (styles: any) => ({
       ...styles,
-      color: 1 ? '#000' : '#fff',
+      color: theme === 'light' ? '#000' : '#fff',
      }),
   }
+
+  function changeTheme(){
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  }
+
+  useEffect(() => {
+    const root = document.querySelector(':root') as HTMLElement;
+    const themeComponents = [
+      'body-background',
+      'components-background',
+      'card-background',
+      'card-shadow',
+      'text-color',
+    ];
+
+    themeComponents.forEach((component) => {
+      root.style.setProperty(`--${component}-default`, `var(--${component}-${theme})`);
+    })
+  }, [theme]);
 
   return (
     <header className={styles.header}>
@@ -36,7 +58,7 @@ function Header() {
         </div>
       </div>
       <div className={styles.wrapper}>
-        <div className={styles.themes}>
+        <div className={styles.themes} onClick={changeTheme}>
           <IconsSvgSelector id='themes' />
         </div>
         <Select defaultValue={options[0]} styles={colorStyles} options={options} />
