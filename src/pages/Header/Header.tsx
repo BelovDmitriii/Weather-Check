@@ -1,21 +1,21 @@
 import styles from './Header.module.scss';
 import IconsSvgSelector from '../../assets/images/icons/IconsSvgSelector';
 import Select from 'react-select';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useTheme } from '../../hooks/useTheme';
 
 function Header() {
+  const theme = useTheme();
   const options = [
     { value: 'city-1', label: 'Москва' },
     { value: 'city-2', label: 'Санкт-Петербург' },
     { value: 'city-3', label: 'Екатеринбург' }
   ];
 
-  const [theme, setTheme] = useState('light')
-
   const colorStyles = {
     control: (styles: any) => ({
       ...styles,
-      backgroundColor: theme === 'light' ? 'rgba(71, 147, 255, 0.2)' : 'rgb(79, 79, 79)',
+      backgroundColor: theme.theme === 'light' ? 'rgba(71, 147, 255, 0.2)' : 'rgb(79, 79, 79)',
       width: '210px',
       height: '37px',
       border: 'none',
@@ -24,12 +24,12 @@ function Header() {
      }),
     singleValue: (styles: any) => ({
       ...styles,
-      color: theme === 'light' ? '#000' : '#fff',
+      color: theme.theme === 'light' ? '#000' : '#fff',
      }),
   }
 
   function changeTheme(){
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    theme.changeTheme(theme.theme === 'light' ? 'dark' : 'light');
   }
 
   useEffect(() => {
@@ -43,7 +43,7 @@ function Header() {
     ];
 
     themeComponents.forEach((component) => {
-      root.style.setProperty(`--${component}-default`, `var(--${component}-${theme})`);
+      root.style.setProperty(`--${component}-default`, `var(--${component}-${theme.theme})`);
     })
   }, [theme]);
 
@@ -67,4 +67,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Header;
