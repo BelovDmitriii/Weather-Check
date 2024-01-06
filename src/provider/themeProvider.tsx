@@ -1,5 +1,5 @@
 import { ReactNode, useState } from 'react';
-import { ThemeContext } from '../context/themeContext';
+import { Theme, ThemeContext } from '../context/themeContext';
 import changeCssVariables from '../model/ChangeCssVariables';
 
 type Props = {
@@ -7,11 +7,11 @@ type Props = {
 }
 
 export const ThemeProvider = ({children, ...props}: Props) => {
-  const [theme, setTheme] = useState<string>('light');
+  const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
 
-  function changeTheme(theme: string) {
+  function changeTheme(theme: Theme) {
     setTheme(theme);
-    changeCssVariables(theme);
+    changeCssVariables(theme)
   }
 
   return (

@@ -2,6 +2,7 @@ import styles from './Header.module.scss';
 import IconsSvgSelector from '../../assets/images/icons/IconsSvgSelector';
 import Select from 'react-select';
 import { useTheme } from '../../hooks/useTheme';
+import { Theme } from '../../context/themeContext';
 
 function Header() {
   const theme = useTheme();
@@ -14,7 +15,7 @@ function Header() {
   const colorStyles = {
     control: (styles: any) => ({
       ...styles,
-      backgroundColor: theme.theme === 'light' ? 'rgba(71, 147, 255, 0.2)' : 'rgb(79, 79, 79)',
+      backgroundColor: theme.theme === Theme.LIGHT ? 'rgba(71, 147, 255, 0.2)' : 'rgb(79, 79, 79)',
       width: '210px',
       height: '37px',
       border: 'none',
@@ -23,12 +24,12 @@ function Header() {
      }),
     singleValue: (styles: any) => ({
       ...styles,
-      color: theme.theme === 'light' ? '#000' : '#fff',
+      color: theme.theme === Theme.LIGHT ? '#000' : '#fff',
      }),
   }
 
   function changeTheme(){
-    theme.changeTheme(theme.theme === 'light' ? 'dark' : 'light');
+    theme.changeTheme(theme.theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
   }
 
   return (
