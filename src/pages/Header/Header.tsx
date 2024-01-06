@@ -1,7 +1,6 @@
 import styles from './Header.module.scss';
 import IconsSvgSelector from '../../assets/images/icons/IconsSvgSelector';
 import Select from 'react-select';
-import { useEffect } from 'react';
 import { useTheme } from '../../hooks/useTheme';
 
 function Header() {
@@ -31,21 +30,6 @@ function Header() {
   function changeTheme(){
     theme.changeTheme(theme.theme === 'light' ? 'dark' : 'light');
   }
-
-  useEffect(() => {
-    const root = document.querySelector(':root') as HTMLElement;
-    const themeComponents = [
-      'body-background',
-      'components-background',
-      'card-background',
-      'card-shadow',
-      'text-color',
-    ];
-
-    themeComponents.forEach((component) => {
-      root.style.setProperty(`--${component}-default`, `var(--${component}-${theme.theme})`);
-    })
-  }, [theme]);
 
   return (
     <header className={styles.header}>
